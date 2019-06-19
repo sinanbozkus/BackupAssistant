@@ -33,7 +33,6 @@ namespace BackupAssistant
 
                 List<string> backupFileList;
 
-                // Eğer parametre aktif ise önce klasördeki zip olmayan tüm dosyalar zipleniyor ve zipsiz halleri siliniyor.
                 if (_appSettings.ZipFilesBeforeSend)
                 {
                     backupFileList = new List<string>();
@@ -42,14 +41,10 @@ namespace BackupAssistant
                     {
                         var fileExtension = Path.GetExtension(item);
 
-                        // mevcut yedek zipleniyor
                         using (var archive = ZipFile.Open(item.Replace(fileExtension, ".zip"), ZipArchiveMode.Create))
                         {
                             archive.CreateEntryFromFile(item, Path.GetFileName(item));
                         }
-
-                        // yedek siliniyor
-                        File.Delete(item);
                     }
                 }
                 else
@@ -62,9 +57,20 @@ namespace BackupAssistant
                     await _ftpServerProvider.SendFilesToServer(backupPath.RemotePath, backupFileList);
                 }
 
-                if (_appSettings.ZipFilesBeforeSend && _appSettings.DeleteFilesAfterSend)
+                if (_appSettings.ZipFilesBeforeSend && _appSettings.DeleteZipFilesAfterSend)
                 {
+                    foreach (var backupFile in backupFileList)
+                    {
+                        File.Delete(backupFile);
+                    }
+                }
 
+                if (_appSettings.DeleteFilesAfterSend)
+                {
+                    foreach (var localFile in localFileList)
+                    {
+                        File.Delete(localFile);
+                    }
                 }
             }
         }

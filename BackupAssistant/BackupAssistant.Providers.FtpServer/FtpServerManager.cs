@@ -22,7 +22,7 @@ namespace BackupAssistant.Providers.FtpServer
             using (var ftpClient = new FtpClient(credentials.Host, credentials.Port, credentials.Username, credentials.Password))
             {
                 ftpClient.Connect();
-                await ftpClient.UploadFilesAsync(filePathList, remotePath);
+                await ftpClient.UploadFilesAsync(filePathList, remotePath, FtpExists.Append);
             }
         }
     }

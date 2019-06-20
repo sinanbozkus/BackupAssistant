@@ -1,6 +1,6 @@
 # Backup Assistant
 
-Backup Assistant helps you to backup files (like database backups or log files) to FTP Server on any platform. It supports cross-platform ( Windows, Linux and Mac.)
+Backup Assistant helps you to backup files (like database backups or log files) to FTP Server. It works on any platform. ( Windows, Linux and Mac.)
 
 This is an **alpha release**, you have to be careful when backup your files. I'm still working on the program. I'm planing to add more providers (Google Cloud etc.) soon.
 

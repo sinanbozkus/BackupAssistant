@@ -2,7 +2,9 @@
 
 Backup Assistant helps you to backup files (like database backups or log files) to FTP Server on any platform. It supports cross-platform ( Windows, Linux and Mac.)
 
-This is an alpha release. I'm still working on the program. I'm planing to add more providers (Google Cloud etc.) soon.
+This is an **alpha release**, you have to be careful when backup your files. I'm still working on the program. I'm planing to add more providers (Google Cloud etc.) soon.
+
+Download: [Releases](https://github.com/sinanbozkus/BackupAssistant/tree/master/Release)
 
 ## Sample Configuration (appsettings.json)
 

@@ -21,7 +21,8 @@ namespace BackupAssistant
             var serviceCollection = new ServiceCollection();
             serviceCollection.AddOptions();
             serviceCollection.Configure<AppSettings>(configuration.GetSection(nameof(AppSettings)));
-            serviceCollection.AddScoped<FtpServerManager>();
+            serviceCollection.AddScoped<IFtpServerProvider, FtpServerManager>();
+            serviceCollection.AddScoped<BackupManager>();
 
             var serviceProvider = serviceCollection.BuildServiceProvider();
 

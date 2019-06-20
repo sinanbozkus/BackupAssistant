@@ -39,12 +39,14 @@ namespace BackupAssistant
 
                     foreach (var item in localFileList)
                     {
-                        var fileExtension = Path.GetExtension(item);
+                        var zipFilePath = Path.ChangeExtension(item, ".zip");
 
-                        using (var archive = ZipFile.Open(item.Replace(fileExtension, ".zip"), ZipArchiveMode.Create))
+                        using (var archive = ZipFile.Open(zipFilePath, ZipArchiveMode.Create))
                         {
                             archive.CreateEntryFromFile(item, Path.GetFileName(item));
                         }
+
+                        backupFileList.Add(zipFilePath);
                     }
                 }
                 else

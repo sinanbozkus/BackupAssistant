@@ -1,0 +1,32 @@
+{
+  "executable": "BackupAssistant.App",
+  "splashscreen": {
+    "imageFile": ""
+  },
+  "singleInstance": false,
+  "build": {
+    "appId": "com.BackupAssistant.App.app",
+    "productName": "BackupAssistant.App",
+    "copyright": "Copyright © 2020",
+    "buildVersion": "1.0.0",
+    "compression": "maximum",
+    "directories": {
+      "output": "../../../bin/Desktop"
+    },
+    "extraResources": [
+      {
+        "from": "./bin",
+        "to": "bin",
+        "filter": ["**/*"]
+      }
+    ],
+    "files": [
+      {
+        "from": "./ElectronHostHook/node_modules",
+        "to": "ElectronHostHook/node_modules",
+        "filter": ["**/*"]
+      },
+      "**/*"
+    ]
+  }
+}

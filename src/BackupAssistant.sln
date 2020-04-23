@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2206CE8E-5198-4A9B-ADC8-896DC6712EAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackupAssistant.App", "src\BackupAssistant.App\BackupAssistant.App.csproj", "{DCEC758A-2E7A-4870-AAF7-3191BEAD4F9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackupAssistant.App", "BackupAssistant.App\BackupAssistant.App.csproj", "{DCEC758A-2E7A-4870-AAF7-3191BEAD4F9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

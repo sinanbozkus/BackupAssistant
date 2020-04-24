@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using ElectronNET.API.Entities;
 
 namespace BackupAssistant.App
 {
@@ -72,6 +73,10 @@ namespace BackupAssistant.App
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
             });
+
+            // var windowOptions = new BrowserWindowOptions {
+            //     Frame = false
+            // };
 
             // Open the Electron-Window here
             Task.Run(async () => await Electron.WindowManager.CreateWindowAsync());

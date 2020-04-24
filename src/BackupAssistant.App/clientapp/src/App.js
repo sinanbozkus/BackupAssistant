@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import HeaderNav from "./components/layout/HeaderNav";
+import { Container } from "react-bootstrap";
+import { Switch, Route } from "react-router-dom";
+import Dashboard from "./components/dashboard/DashBoard";
+import Providers from "./components/providers/Providers";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <HeaderNav></HeaderNav>
+      <Container fluid>
+        <Switch>
+          <Route path="/" exact component={Dashboard}></Route>
+          <Route path="/providers" component={Providers}></Route>
+        </Switch>
+      </Container>
     </div>
   );
 }
+
+document.body.classList.add("theme-dark");
+document.body.classList.add("overflow-auto");
 
 export default App;

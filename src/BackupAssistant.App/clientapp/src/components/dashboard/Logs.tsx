@@ -8,16 +8,115 @@ library.add(faGoogleDrive);
 
 export default function Logs() {
   return (
-    <Table>
+    <Table striped hover className="border">
       <thead>
         <tr>
-          <td>Provider</td>
-          <td>Start Date</td>
-          <td>End Date</td>
-          <td>Process</td>
+          <th><span className="h5 mb-0">Provider</span></th>
+          <th><span className="h5 mb-0">Start Date</span></th>
+          <th><span className="h5 mb-0">End Date</span></th>
+          <th><span className="h5 mb-0">Process</span></th>
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td>
+            <FontAwesomeIcon icon={["fab", "google-drive"]} className="mr-2" />
+            Google Drive
+          </td>
+          <td>2020-04-25 00:12</td>
+          <td>2020-04-25 00:53</td>
+          <td>
+            <Badge className="bg-success">Success</Badge>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <FontAwesomeIcon icon={["fab", "google-drive"]} className="mr-2" />
+            Google Drive
+          </td>
+          <td>2020-04-25 00:12</td>
+          <td>2020-04-25 00:53</td>
+          <td>
+            <Badge className="bg-success">Success</Badge>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <FontAwesomeIcon icon={["fab", "google-drive"]} className="mr-2" />
+            Google Drive
+          </td>
+          <td>2020-04-25 00:12</td>
+          <td>2020-04-25 00:53</td>
+          <td>
+            <Badge className="bg-success">Success</Badge>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <FontAwesomeIcon icon={["fab", "google-drive"]} className="mr-2" />
+            Google Drive
+          </td>
+          <td>2020-04-25 00:12</td>
+          <td>2020-04-25 00:53</td>
+          <td>
+            <Badge className="bg-success">Success</Badge>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <FontAwesomeIcon icon={["fab", "google-drive"]} className="mr-2" />
+            Google Drive
+          </td>
+          <td>2020-04-25 00:12</td>
+          <td>2020-04-25 00:53</td>
+          <td>
+            <Badge className="bg-success">Success</Badge>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <FontAwesomeIcon icon={["fab", "google-drive"]} className="mr-2" />
+            Google Drive
+          </td>
+          <td>2020-04-25 00:12</td>
+          <td>2020-04-25 00:53</td>
+          <td>
+            <Badge className="bg-success">Success</Badge>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <FontAwesomeIcon icon={["fab", "google-drive"]} className="mr-2" />
+            Google Drive
+          </td>
+          <td>2020-04-25 00:12</td>
+          <td>2020-04-25 00:53</td>
+          <td>
+            <Badge className="bg-success">Success</Badge>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <FontAwesomeIcon icon={["fab", "google-drive"]} className="mr-2" />
+            Google Drive
+          </td>
+          <td>2020-04-25 00:12</td>
+          <td>2020-04-25 00:53</td>
+          <td>
+            <Badge className="bg-success">Success</Badge>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <FontAwesomeIcon icon={["fab", "google-drive"]} className="mr-2" />
+            Google Drive
+          </td>
+          <td>2020-04-25 00:12</td>
+          <td>2020-04-25 00:53</td>
+          <td>
+            <Badge className="bg-success">Success</Badge>
+          </td>
+        </tr>
         <tr>
           <td>
             <FontAwesomeIcon icon={["fab", "google-drive"]} className="mr-2" />

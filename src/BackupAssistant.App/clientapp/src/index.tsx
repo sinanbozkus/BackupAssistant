@@ -4,12 +4,18 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "../src/assets/css/tabler.min.css";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import configureStore from "./redux/recuders/configureStore";
+
+const store = configureStore();
 
 ReactDOM.render(
   <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <Provider store={store}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Provider>
   </BrowserRouter>,
   document.getElementById("root")
 );

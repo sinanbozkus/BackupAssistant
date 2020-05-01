@@ -22,10 +22,10 @@ export default function HeaderNav() {
           </button>
           <Link
             to="/"
-            className="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pr-0 pr-md-3"
+            className="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pr-0 pr-md-3 ml-1"
           >
-            <FontAwesomeIcon icon={["fas", "check-double"]} className="mr-1" />
-            Backup Assistant
+            <FontAwesomeIcon icon={["fas", "check-double"]} className="mr-2" />
+            <span style={{fontSize:"22px"}}>Backup Assistant</span>
           </Link>
           <div className="collapse navbar-collapse" id="navbar-menu">
             <div className="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">

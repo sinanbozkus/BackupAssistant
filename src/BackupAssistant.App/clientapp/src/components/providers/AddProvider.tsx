@@ -1,26 +1,48 @@
 import React, { useState } from "react";
-import { Form, Button, Card } from "react-bootstrap";
+import { Form, Button, Modal } from "react-bootstrap";
 import SelectProviderType from "./SelectProviderType";
 import { useForm } from "react-hook-form";
 import FtpProvider from "./providerTypes/FtpProvider";
 import { providerTypesEnum } from "../../variables";
+import axios from "axios";
 
-export default function AddProvider() {
+export default function AddProvider({ modalState, closeModal }: any) {
   const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = (data: any) => console.log(data);
   const [selectedProviderType, setSelectedProviderType] = useState(0);
 
   function providerTypeSelected(providerType: number) {
     setSelectedProviderType(providerType);
   }
 
+  const onSubmit = (data: any) => {
+    var form_data = new FormData();
+
+    for (var key in data) {
+      form_data.append(key, data[key]);
+    }
+
+    axios({
+      method: "post",
+      url: "/provider/save",
+      data: form_data,
+      headers: { "Content-Type": "multipart/form-data" },
+    })
+      .then(function (response: any) {
+        closeModal();
+        console.log(response);
+      })
+      .catch(function (response) {
+        console.log(response);
+      });
+  };
+
   return (
-    <Card>
-      <Card.Header>
-        <Card.Title>Add Provider</Card.Title>
-      </Card.Header>
-      <Card.Body>
-        <Form onSubmit={handleSubmit(onSubmit)}>
+    <Modal show={modalState} onHide={closeModal}>
+      <Form onSubmit={handleSubmit(onSubmit)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Add Provider</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
           <Form.Group className="mb-3">
             <Form.Label>Friendly Name</Form.Label>
             <Form.Control name="friendlyName" type="text" ref={register} />
@@ -34,15 +56,17 @@ export default function AddProvider() {
           {selectedProviderType == providerTypesEnum.FtpServer && (
             <FtpProvider register={register}></FtpProvider>
           )}
-
-          <Form.Group className="text-right">
-            <Button variant="primary" type="submit">
-              Save Provider
-            </Button>
-          </Form.Group>
-        </Form>
-      </Card.Body>
-    </Card>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={closeModal}>
+            Cancel
+          </Button>
+          <Button variant="primary" type="submit">
+            Save Provider
+          </Button>
+        </Modal.Footer>
+      </Form>
+    </Modal>
 
     // <form onSubmit={handleSubmit(onSubmit)}>
     //   <input name="example" defaultValue="test" ref={register} />

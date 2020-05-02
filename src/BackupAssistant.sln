@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2206CE8E-5198-4A9B-ADC8-896DC6712EAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackupAssistant.App", "BackupAssistant.App\BackupAssistant.App.csproj", "{DCEC758A-2E7A-4870-AAF7-3191BEAD4F9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackupAssistant.App", "BackupAssistant.App\BackupAssistant.App.csproj", "{DCEC758A-2E7A-4870-AAF7-3191BEAD4F9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackupAssistant.Console", "BackupAssistant.Console\BackupAssistant.Console.csproj", "{653B1515-0935-4AF6-A734-D59065DA5FFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackupAssistant.Console", "BackupAssistant.Console\BackupAssistant.Console.csproj", "{653B1515-0935-4AF6-A734-D59065DA5FFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackupAssistant.Core", "BackupAssistant.Core\BackupAssistant.Core.csproj", "{1F7A1459-EFB4-43AE-813B-494D7DBD23F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackupAssistant.Core", "BackupAssistant.Core\BackupAssistant.Core.csproj", "{1F7A1459-EFB4-43AE-813B-494D7DBD23F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DCEC758A-2E7A-4870-AAF7-3191BEAD4F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -61,7 +58,15 @@ Global
 		{1F7A1459-EFB4-43AE-813B-494D7DBD23F0}.Release|x86.ActiveCfg = Release|Any CPU
 		{1F7A1459-EFB4-43AE-813B-494D7DBD23F0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DCEC758A-2E7A-4870-AAF7-3191BEAD4F9A} = {2206CE8E-5198-4A9B-ADC8-896DC6712EAB}
+		{653B1515-0935-4AF6-A734-D59065DA5FFA} = {2206CE8E-5198-4A9B-ADC8-896DC6712EAB}
+		{1F7A1459-EFB4-43AE-813B-494D7DBD23F0} = {2206CE8E-5198-4A9B-ADC8-896DC6712EAB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1F95A874-F077-4F9C-BD0E-2EC97AB979CC}
 	EndGlobalSection
 EndGlobal

@@ -11,6 +11,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using ElectronNET.API.Entities;
+using BackupAssistant.Core.Extensions;
+using Microsoft.EntityFrameworkCore;
+using BackupAssistant.Core;
+using BackupAssistant.Core.Data;
 
 namespace BackupAssistant.App
 {
@@ -34,6 +38,10 @@ namespace BackupAssistant.App
             {
                 configuration.RootPath = "clientapp/build";
             });
+
+            services.AddDbContext<BaContext>(options => options.UseSqlite(Variables.ConnectionString));
+
+            services.RegisterServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

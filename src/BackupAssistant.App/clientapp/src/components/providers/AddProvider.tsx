@@ -2,19 +2,24 @@ import React, { useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import SelectProviderType from "./SelectProviderType";
 import { useForm } from "react-hook-form";
-import FtpProvider from "./providerTypes/FtpProvider";
+import { FtpProvider } from "./providerTypes";
 import { providerTypesEnum } from "../../variables";
 import axios from "axios";
+import Toastr from "toastr2";
 
 export default function AddProvider({ modalState, closeModal }: any) {
   const { register, handleSubmit, watch, errors } = useForm();
   const [selectedProviderType, setSelectedProviderType] = useState(0);
+  const toastr = new Toastr();
+
+  
 
   function providerTypeSelected(providerType: number) {
     setSelectedProviderType(providerType);
   }
 
   const onSubmit = (data: any) => {
+   
     var form_data = new FormData();
 
     for (var key in data) {
@@ -29,11 +34,15 @@ export default function AddProvider({ modalState, closeModal }: any) {
     })
       .then(function (response: any) {
         closeModal();
+        toastr.success("Are you the 6 fingered man?");
         console.log(response);
       })
       .catch(function (response) {
+        closeModal();
+        toastr.success("Google Drive hesabı eklendi.");
         console.log(response);
       });
+      
   };
 
   return (

@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import configureStore from "./redux/recuders/configureStore";
 
 import "../src/assets/css/tabler.min.css";
+import 'toastr2/dist/toastr.min.css';
 
 const store = configureStore();
 

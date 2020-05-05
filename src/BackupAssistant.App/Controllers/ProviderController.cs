@@ -5,6 +5,7 @@ using BackupAssistant.App.Models;
 using System;
 using BackupAssistant.Core.Types;
 using BackupAssistant.App.Types;
+using BackupAssistant.App.ModelBinders;
 
 namespace BackupAssistant.App.Controllers
 {
@@ -18,27 +19,42 @@ namespace BackupAssistant.App.Controllers
         }
 
 
+        public IActionResult AddFtpServer(ProviderInput<FtpServer> formData)
+        {
+            return Ok();
+        }
+
 
         [HttpPost]
-        public IActionResult Save(ProviderInput input)
-        {
-            if (input.ProviderType == ProviderType.FtpServer)
-            {
-                var model = new ProviderDto<FtpServer>
-                {
-                    ProviderType = input.ProviderType,
-                    ProviderName = input.FriendlyName,
-                    Provider = new FtpServer
-                    {
-                        Host = Request.Form["host"],
-                        User = Request.Form["username"],
-                        Password = Request.Form["password"],
-                        Port = Convert.ToInt32(Request.Form["port"])
-                    }
-                };
+        ////public IActionResult Save([ModelBinder(typeof(ProviderModelBinder))] object input)
+        ///public IActionResult Save([ModelBinder(typeof(ProviderModelBinder))] object input)
+        public IActionResult Save(object input)
 
-                _providerService.AddProvider<FtpServer>(model);
-            }
+
+
+
+
+        //public IActionResult SaveFtpServer
+        //public IActionResult SaveGoogleDrive
+
+        {
+            //if (input.ProviderType == ProviderType.FtpServer)
+            //{
+            //    var model = new ProviderDto<FtpServer>
+            //    {
+            //        ProviderType = input.ProviderType,
+            //        ProviderName = input.FriendlyName,
+            //        Provider = new FtpServer
+            //        {
+            //            Host = Request.Form["host"],
+            //            User = Request.Form["username"],
+            //            Password = Request.Form["password"],
+            //            Port = Convert.ToInt32(Request.Form["port"])
+            //        }
+            //    };
+
+            //    _providerService.AddProvider<FtpServer>(model);
+            //}
 
             return Json(new FormResult
             {
@@ -47,7 +63,8 @@ namespace BackupAssistant.App.Controllers
             });
         }
 
-        public IActionResult GetList(){
+        public IActionResult GetList()
+        {
             return Json(_providerService.GetProviders());
         }
 
